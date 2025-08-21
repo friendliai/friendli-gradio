@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "friendli-gradio"
-version = "0.0.4"
+version = "0.0.5"
 description = "A Python package for creating Gradio applications with Friendli serverless models"
 authors = [{ name = "minpeter", email = "minpeter@friendli.ai" }]
 readme = "README.md"
@@ -22,7 +22,7 @@ dependencies = [
 ]
 
 [tool.bumpversion]
-current_version = "0.0.4"
+current_version = "0.0.5"
 commit = true
 tag = true
 serialize = ["{major}.{minor}.{patch}"]

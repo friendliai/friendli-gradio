@@ -38,11 +38,13 @@ def registry(name: str, token: str | None = None, base_url: str | None = None) -
             {"role": "system", "content": "You are a helpful assistant."}]
 
         # Add conversation history
-        for user_msg, assistant_msg in history:
-            messages.append({"role": "user", "content": user_msg})
-            if assistant_msg:
-                messages.append(
-                    {"role": "assistant", "content": assistant_msg})
+        for msg in history:
+            # Only include role and content fields to ensure Friendli API compatibility
+            clean_msg = {
+                "role": msg["role"],
+                "content": msg["content"]
+            }
+            messages.append(clean_msg)
 
         # Add current user message
         messages.append({"role": "user", "content": message})
